@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skills - My Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="about.css">
+</head>
+<body>
+    <!-- <div class="bg-shape shape1"></div> -->
+    <div class="bg-shape shape2"></div>
+
+    <header class="header container">
+        <a href="index.html" class="logo">My Portfolio</a>
+        <nav class="nav-links">
+            <a href="index.html">About</a>
+            <a href="project.html">Project</a>
+            <a href="skills.html">Skills</a>
+        </nav>
+    </header>
+
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const links = document.querySelectorAll('a[href="index.html"], a[href="project.html"]');
+
+            links.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const destination = this.href;
+                    document.body.classList.add('fade-out');
+                    setTimeout(() => {
+                        window.location.href = destination;
+                    }, 500); // Match the animation duration
+                });
+            });
+        });
+    </script>
+</body>
+</html>
