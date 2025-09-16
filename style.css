@@ -89,7 +89,7 @@ body.fade-out {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    padding: 4rem 0;
+    padding: 2rem 0;
     gap: 3rem;
 }
 
@@ -125,7 +125,7 @@ body.fade-out {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 4rem;
-    padding: 2rem 0;
+    padding: 1.5rem 0;
 }
 
 .detail-column h2 {
@@ -159,8 +159,83 @@ body.fade-out {
     margin-bottom: 0;
 }
 
+.skills-section {
+    padding: 1.5rem 0;
+    margin-top: 1rem;
+}
+
+.skills-section h2 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    border-bottom: 2px solid var(--primary-color);
+    padding-bottom: 0.5rem;
+    display: inline-block;
+    letter-spacing: 0.5px;
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+.skill-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1.5rem 1rem;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 15px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border: 2px solid transparent;
+}
+
+.skill-item:hover {
+    transform: translateY(-8px) scale(1.05);
+    box-shadow: 0 15px 30px rgba(86, 54, 176, 0.2);
+    border: 2px solid rgba(86, 54, 176, 0.3);
+    background-color: rgba(255, 255, 255, 0.95);
+}
+
+.skill-logo {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 0.8rem;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.skill-logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transition: all 0.3s ease;
+}
+
+.skill-item:hover .skill-logo img {
+    transform: rotate(5deg) scale(1.1);
+}
+
+.skill-name {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #333;
+    text-align: center;
+    transition: color 0.3s ease;
+}
+
+.skill-item:hover .skill-name {
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
 .resume-section {
-    padding: 4rem 0;
+    padding: 2rem 0;
     text-align: center;
 }
 

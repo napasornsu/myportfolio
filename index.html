@@ -15,7 +15,6 @@
         <nav class="nav-links">
             <a href="index.html">About</a>
             <a href="project.html">Project</a>
-            <a href="skills.html">Skills</a>
         </nav>
     </header>
 
@@ -27,6 +26,53 @@
             </div>
             <div class="intro-image">
                 <img src="img/me.png" alt="Napasorn Subongkotch">
+            </div>
+        </section>
+
+        <section class="skills-section">
+            <h2>SKILLS</h2>
+            <div class="skills-grid">
+                <div class="skill-item" data-skill="Figma">
+                    <div class="skill-logo">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" alt="Figma">
+                    </div>
+                    <span class="skill-name">Figma</span>
+                </div>
+
+                <div class="skill-item" data-skill="Wix">
+                    <div class="skill-logo">
+                        <img src="https://www.wix.com/favicon.ico" alt="Wix">
+                    </div>
+                    <span class="skill-name">Wix</span>
+                </div>
+
+                <div class="skill-item" data-skill="Miro">
+                    <div class="skill-logo">
+                        <img src="https://cdn.worldvectorlogo.com/logos/miro-2.svg" alt="Miro">
+                    </div>
+                    <span class="skill-name">Miro</span>
+                </div>
+
+                <div class="skill-item" data-skill="Draw.io">
+                    <div class="skill-logo">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/3/3e/Diagrams.net_Logo.svg" alt="Draw.io">
+                    </div>
+                    <span class="skill-name">Draw.io</span>
+                </div>
+
+                <!-- <div class="skill-item" data-skill="Pencil Project">
+                    <div class="skill-logo">
+                        <img src="https://pencil.evolus.vn/favicon.ico" alt="Pencil Project">
+                    </div>
+                    <span class="skill-name">Pencil Project</span>
+                </div>
+
+                <div class="skill-item" data-skill="Blender">
+                    <div class="skill-logo">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/blender/blender-original.svg" alt="Blender">
+                    </div>
+                    <span class="skill-name">Blender</span>
+                </div> -->
             </div>
         </section>
 
@@ -71,7 +117,7 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            const links = document.querySelectorAll('a[href="project.html"], a[href="skills.html"]');
+            const links = document.querySelectorAll('a[href="project.html"]');
 
             links.forEach(link => {
                 link.addEventListener('click', function(e) {

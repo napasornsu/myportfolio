@@ -13,7 +13,6 @@
         <nav class="nav-links">
             <a href="index.html">About</a>
             <a href="project.html">Project</a>
-            <a href="skills.html">Skills</a>
         </nav>
     </header>
 
@@ -24,30 +23,30 @@
         </div>
 
         <div class="project-grid">
-            <div class="grid-item item1">
-                <img src="img/test1.png" alt="Project 1">
+            <a href="project-detail.html" class="grid-item item1">
+                <img src="img/test1.png" alt="CS Fitness Website">
                 <div class="project-overlay">
-                    <h3>Project One</h3>
+                    <h3>CS Fitness Website</h3>
                 </div>
-            </div>
-            <div class="grid-item item2">
-                <img src="img/w2.png" alt="Project 2">
+            </a>
+            <a href="project-detail-2.html" class="grid-item item2">
+                <img src="img/w2.png" alt="E-commerce Platform">
                 <div class="project-overlay">
-                    <h3>Project Two</h3>
+                    <h3>E-commerce Platform</h3>
                 </div>
-            </div>
-            <div class="grid-item item3">
-                <img src="img/w2.png" alt="Project 3">
+            </a>
+            <a href="project-detail-3.html" class="grid-item item3">
+                <img src="img/w2.png" alt="Mobile App Design">
                 <div class="project-overlay">
-                    <h3>Project Three</h3>
+                    <h3>Mobile App Design</h3>
                 </div>
-            </div>
-            <div class="grid-item item4">
-                <img src="img/w2.png" alt="Project 4">
+            </a>
+            <a href="project-detail-4.html" class="grid-item item4">
+                <img src="img/w2.png" alt="Dashboard UI">
                 <div class="project-overlay">
-                    <h3>Project Four</h3>
+                    <h3>Dashboard UI</h3>
                 </div>
-            </div>
+            </a>
         </div>
     </main>
 
@@ -65,7 +64,7 @@
     
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            const links = document.querySelectorAll('a[href="index.html"], a[href="skills.html"]');
+            const links = document.querySelectorAll('a[href="index.html"], a[href^="project-detail"]');
 
             links.forEach(link => {
                 link.addEventListener('click', function(e) {
