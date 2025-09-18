@@ -204,18 +204,17 @@
         <button class="modal-prev" onclick="changeImage(-1)">&#10094;</button>
         <button class="modal-next" onclick="changeImage(1)">&#10095;</button>
         <div class="modal-counter">
-            <span id="currentImageNumber">1</span> / <span id="totalImages">6</span>
+            <span id="currentImageNumber">1</span> / <span id="totalImages">5</span>
         </div>
     </div>
 
     <script>
         const images = [
-            { src: 'img/test1.png', alt: 'Homepage Design' },
-            { src: 'img/w2.png', alt: 'Mobile Version' },
-            { src: 'img/w2.png', alt: 'User Dashboard' },
-            { src: 'img/test1.png', alt: 'Wireframes' },
-            { src: 'img/w2.png', alt: 'Color Palette' },
-            { src: 'img/w2.png', alt: 'Typography' }
+            { src: 'img/test1.png', alt: 'Pain Points & Solutions' },
+            { src: 'img/w2.png', alt: 'User Journey' },
+            { src: 'img/w2.png', alt: 'Wireframes' },
+            { src: 'img/test1.png', alt: 'Color Palette' },
+            { src: 'img/w2.png', alt: 'Components' }
         ];
         
         let currentImageIndex = 0;
@@ -225,14 +224,18 @@
             const modal = document.getElementById('imageModal');
             const modalImage = document.getElementById('modalImage');
             const currentNumber = document.getElementById('currentImageNumber');
+            const totalNumber = document.getElementById('totalImages');
             
-            modalImage.src = images[currentImageIndex].src;
-            modalImage.alt = images[currentImageIndex].alt;
-            currentNumber.textContent = currentImageIndex + 1;
-            modal.classList.add('active');
-            
-            // Disable body scroll
-            document.body.style.overflow = 'hidden';
+            if (modalImage && images[currentImageIndex]) {
+                modalImage.src = images[currentImageIndex].src;
+                modalImage.alt = images[currentImageIndex].alt;
+                currentNumber.textContent = currentImageIndex + 1;
+                totalNumber.textContent = images.length;
+                modal.classList.add('active');
+                
+                // Disable body scroll
+                document.body.style.overflow = 'hidden';
+            }
         }
         
         function closeModal() {
@@ -254,9 +257,12 @@
             
             const modalImage = document.getElementById('modalImage');
             const currentNumber = document.getElementById('currentImageNumber');
-            modalImage.src = images[currentImageIndex].src;
-            modalImage.alt = images[currentImageIndex].alt;
-            currentNumber.textContent = currentImageIndex + 1;
+            
+            if (modalImage && images[currentImageIndex]) {
+                modalImage.src = images[currentImageIndex].src;
+                modalImage.alt = images[currentImageIndex].alt;
+                currentNumber.textContent = currentImageIndex + 1;
+            }
         }
         
         // Close modal when clicking outside the image

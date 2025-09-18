@@ -227,14 +227,18 @@
             const modal = document.getElementById('imageModal');
             const modalImage = document.getElementById('modalImage');
             const currentNumber = document.getElementById('currentImageNumber');
+            const totalNumber = document.getElementById('totalImages');
             
-            modalImage.src = images[currentImageIndex].src;
-            modalImage.alt = images[currentImageIndex].alt;
-            currentNumber.textContent = currentImageIndex + 1;
-            modal.classList.add('active');
-            
-            // Disable body scroll
-            document.body.style.overflow = 'hidden';
+            if (modalImage && images[currentImageIndex]) {
+                modalImage.src = images[currentImageIndex].src;
+                modalImage.alt = images[currentImageIndex].alt;
+                currentNumber.textContent = currentImageIndex + 1;
+                totalNumber.textContent = images.length;
+                modal.classList.add('active');
+                
+                // Disable body scroll
+                document.body.style.overflow = 'hidden';
+            }
         }
         
         function closeModal() {
@@ -256,9 +260,12 @@
             
             const modalImage = document.getElementById('modalImage');
             const currentNumber = document.getElementById('currentImageNumber');
-            modalImage.src = images[currentImageIndex].src;
-            modalImage.alt = images[currentImageIndex].alt;
-            currentNumber.textContent = currentImageIndex + 1;
+            
+            if (modalImage && images[currentImageIndex]) {
+                modalImage.src = images[currentImageIndex].src;
+                modalImage.alt = images[currentImageIndex].alt;
+                currentNumber.textContent = currentImageIndex + 1;
+            }
         }
         
         // Close modal when clicking outside the image
