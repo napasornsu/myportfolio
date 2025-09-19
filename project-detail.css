@@ -318,6 +318,10 @@
     transform: scale(0.45);
 }
 
+#modalImage.fn1-scaled {
+    transform: scale(0.315); /* 0.45 * 0.7 = 0.315 (30% smaller than scaled-down) */
+}
+
 .modal-close {
     position: fixed;
     top: 20px;
