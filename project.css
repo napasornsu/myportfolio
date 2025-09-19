@@ -31,8 +31,9 @@ body {
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: auto auto;
     gap: 1.5rem;
-    padding-bottom: 4rem;
+    padding: 1rem 0 4rem 0;
     height: 70vh;
+    overflow: visible;
 }
 
 .grid-item {
@@ -45,10 +46,13 @@ body {
     display: block;
     text-decoration: none;
     color: inherit;
+    cursor: pointer;
 }
 
 .grid-item:hover {
-    box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(86, 54, 176, 0.3), 
+                0 0 30px rgba(86, 54, 176, 0.2);
     z-index: 10;
 }
 
@@ -60,9 +64,10 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(86, 54, 176, 0.85);
+    background: linear-gradient(135deg, rgba(86, 54, 176, 0.85), rgba(59, 45, 108, 0.85));
     color: white;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     opacity: 0;
@@ -73,7 +78,7 @@ body {
 
 .grid-item:hover .project-overlay {
     opacity: 1;
-    background: rgba(86, 54, 176, 0.9);
+    background: linear-gradient(135deg, rgba(86, 54, 176, 0.95), rgba(59, 45, 108, 0.95));
 }
 
 .project-overlay h3 {
@@ -82,11 +87,16 @@ body {
     text-transform: uppercase;
     letter-spacing: 1px;
     transform: translateY(20px);
-    transition: transform 0.4s ease;
+    transition: all 0.4s ease;
+    text-align: center;
+    padding: 0 1rem;
+    opacity: 0;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
 }
 
 .grid-item:hover .project-overlay h3 {
     transform: translateY(0);
+    opacity: 1;
 }
 
 .grid-item img {

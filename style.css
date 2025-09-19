@@ -173,11 +173,11 @@ body.fade-out {
 }
 
 .skills-section {
-    padding: 1.5rem 0;
+    padding: 2rem 0;
     margin-top: 1rem;
     width: 100%;
     max-width: 100%;
-    overflow: hidden;
+    overflow: visible;
 }
 
 .skills-section h2 {
@@ -197,6 +197,8 @@ body.fade-out {
     margin-top: 1rem;
     width: 100%;
     max-width: 100%;
+    padding: 0.5rem;
+    overflow: visible;
 }
 
 .skill-item {
@@ -509,14 +511,16 @@ body.fade-out {
     /* Skills Section Responsive */
     .skills-section {
         width: 100%;
-        padding: 0;
+        padding: 1.5rem 0;
+        overflow: visible;
     }
 
     .skills-grid {
         grid-template-columns: repeat(2, 1fr);
         gap: 1rem;
         width: 100%;
-        padding: 0;
+        padding: 0.5rem;
+        overflow: visible;
     }
 
     .skill-item {
@@ -601,7 +605,8 @@ body.fade-out {
     .skills-grid {
         grid-template-columns: repeat(2, 1fr);
         gap: 1rem;
-        padding: 0;
+        padding: 0.5rem;
+        overflow: visible;
     }
     
     .skill-item {
