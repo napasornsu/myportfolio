@@ -60,7 +60,7 @@ body.fade-out {
     width: 90%;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 1rem;
+    padding: 0 2rem;
     box-sizing: border-box;
 }
 
@@ -173,11 +173,11 @@ body.fade-out {
 }
 
 .skills-section {
-    padding: 1.5rem 0;
+    padding: 2rem 0;
     margin-top: 1rem;
     width: 100%;
     max-width: 100%;
-    overflow: hidden;
+    overflow: visible;
 }
 
 .skills-section h2 {
@@ -197,6 +197,8 @@ body.fade-out {
     margin-top: 1rem;
     width: 100%;
     max-width: 100%;
+    padding: 0.5rem;
+    overflow: visible;
 }
 
 .skill-item {
@@ -401,6 +403,11 @@ body.fade-out {
     z-index: 1000;
     transform: translateX(-100%);
     transition: transform 0.3s ease;
+    padding: 2rem;
+    padding-top: max(2rem, env(safe-area-inset-top));
+    padding-bottom: max(2rem, env(safe-area-inset-bottom));
+    padding-left: max(2rem, env(safe-area-inset-left));
+    padding-right: max(2rem, env(safe-area-inset-right));
 }
 
 .mobile-nav.active {
@@ -434,13 +441,16 @@ body.fade-out {
     .container {
         width: 100%;
         max-width: 100vw;
-        padding: 0 1rem;
+        padding: 0 2rem;
+        padding-left: max(2rem, env(safe-area-inset-left));
+        padding-right: max(2rem, env(safe-area-inset-right));
         margin: 0;
     }
 
     /* Header Responsive */
     .header {
-        padding: 1rem 0;
+        padding: 1rem;
+        padding-top: max(1rem, env(safe-area-inset-top));
         width: 100%;
     }
 
@@ -481,6 +491,9 @@ body.fade-out {
         line-height: 1.6;
         width: 100%;
         padding: 0;
+        max-width: 100%;
+        word-break: break-word;
+        overflow-wrap: break-word;
     }
 
     .intro-image {
@@ -498,14 +511,16 @@ body.fade-out {
     /* Skills Section Responsive */
     .skills-section {
         width: 100%;
-        padding: 0;
+        padding: 1.5rem 0;
+        overflow: visible;
     }
 
     .skills-grid {
         grid-template-columns: repeat(2, 1fr);
         gap: 1rem;
         width: 100%;
-        padding: 0;
+        padding: 0.5rem;
+        overflow: visible;
     }
 
     .skill-item {
@@ -543,6 +558,10 @@ body.fade-out {
     .detail-column p {
         font-size: 0.9rem;
         word-break: break-word;
+        line-height: 1.6;
+        margin-bottom: 0.8rem;
+        max-width: 100%;
+        overflow-wrap: break-word;
     }
 
     /* Resume Section */
@@ -572,7 +591,9 @@ body.fade-out {
 
 @media (max-width: 480px) {
     .container {
-        padding: 0 0.5rem;
+        padding: 1rem;
+        padding-left: max(1rem, env(safe-area-inset-left));
+        padding-right: max(1rem, env(safe-area-inset-right));
         width: 100%;
     }
     
@@ -584,7 +605,8 @@ body.fade-out {
     .skills-grid {
         grid-template-columns: repeat(2, 1fr);
         gap: 1rem;
-        padding: 0;
+        padding: 0.5rem;
+        overflow: visible;
     }
     
     .skill-item {
