@@ -16,6 +16,15 @@
             <a href="index.html">About</a>
             <a href="project.html">Project</a>
         </nav>
+        <button class="hamburger" aria-label="Toggle navigation">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </button>
+        <div class="mobile-nav">
+            <a href="index.html">About</a>
+            <a href="project.html">Project</a>
+        </div>
     </header>
 
     <main class="container">
@@ -118,6 +127,26 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
+            // Hamburger menu functionality
+            const hamburger = document.querySelector('.hamburger');
+            const mobileNav = document.querySelector('.mobile-nav');
+            
+            hamburger.addEventListener('click', () => {
+                hamburger.classList.toggle('active');
+                mobileNav.classList.toggle('active');
+                document.body.style.overflow = mobileNav.classList.contains('active') ? 'hidden' : 'auto';
+            });
+            
+            // Close mobile nav when clicking on a link
+            document.querySelectorAll('.mobile-nav a').forEach(link => {
+                link.addEventListener('click', () => {
+                    hamburger.classList.remove('active');
+                    mobileNav.classList.remove('active');
+                    document.body.style.overflow = 'auto';
+                });
+            });
+            
+            // Page transition functionality
             const links = document.querySelectorAll('a[href="project.html"]');
 
             links.forEach(link => {
