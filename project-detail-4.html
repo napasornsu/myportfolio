@@ -49,7 +49,7 @@
 
             <!-- Featured image -->
             <div class="project-featured-image">
-                <img src="img/preview4.png" alt="Phone Number Checking Application">
+                <img src="img/preview_app.jpg" alt="Phone Number Checking Application">
             </div>
 
             <!-- Project content -->
@@ -90,7 +90,7 @@
                         <div class="step">
                             <h3>2. Design System</h3>
                             <div class="gallery-item" onclick="openModal(3)">
-                                <img src="img/DesignSystem2.png" alt="Design System">
+                                <img src="img/component4.jpg" alt="Design System">
                             </div>
                         </div>
                         <div class="step">
@@ -119,15 +119,34 @@
                     <h2>Design Gallery</h2>
                     <div class="gallery-grid">
                         <div class="gallery-item" onclick="openModal(4)">
-                            <img src="img/w2.png" alt="App Interface">
+                            <img src="img/app1.jpg" alt="app1">
                         </div>
-                        
                         <div class="gallery-item" onclick="openModal(5)">
-                            <img src="img/test1.png" alt="Phone Checking Screen">
+                            <img src="img/app2.jpg" alt="app2">
                         </div>
-                        
                         <div class="gallery-item" onclick="openModal(6)">
-                            <img src="img/w2.png" alt="User Experience">
+                            <img src="img/app3.jpg" alt="app3">
+                        </div>
+                        <div class="gallery-item" onclick="openModal(7)">
+                            <img src="img/app4.jpg" alt="app4">
+                        </div>
+                        <div class="gallery-item" onclick="openModal(8)">
+                            <img src="img/app5.jpg" alt="app5">
+                        </div>
+                        <div class="gallery-item" onclick="openModal(9)">
+                            <img src="img/app6.jpg" alt="app6">
+                        </div>
+                        <div class="gallery-item" onclick="openModal(10)">
+                            <img src="img/app7.jpg" alt="app7">
+                        </div>
+                        <div class="gallery-item" onclick="openModal(11)">
+                            <img src="img/app8.jpg" alt="app8">
+                        </div>
+                        <div class="gallery-item" onclick="openModal(12)">
+                            <img src="img/app9.jpg" alt="app9">
+                        </div>
+                        <div class="gallery-item" onclick="openModal(13)">
+                            <img src="img/app10.jpg" alt="app10">
                         </div>
                     </div>
                 </section>
@@ -182,10 +201,17 @@
             { src: 'img/painpoint4.png', alt: 'Pain point & solution' },
             { src: 'img/persona4.png', alt: 'Persona' },
             { src: 'img/flowchart4.png', alt: 'Flowchart' },
-            { src: 'img/DesignSystem2.png', alt: 'Design System' },
-            { src: 'img/w2.png', alt: 'App Interface' },
-            { src: 'img/test1.png', alt: 'Phone Checking Screen' },
-            { src: 'img/w2.png', alt: 'User Experience' }
+            { src: 'img/component4.jpg', alt: 'Design System' },
+            { src: 'img/app1.jpg', alt: 'app1' },
+            { src: 'img/app2.jpg', alt: 'app2' },
+            { src: 'img/app3.jpg', alt: 'app3' },
+            { src: 'img/app4.jpg', alt: 'app4' },
+            { src: 'img/app5.jpg', alt: 'app5' },
+            { src: 'img/app6.jpg', alt: 'app6' },
+            { src: 'img/app7.jpg', alt: 'app7' },
+            { src: 'img/app8.jpg', alt: 'app8' },
+            { src: 'img/app9.jpg', alt: 'app9' },
+            { src: 'img/app10.jpg', alt: 'app10' },
         ];
         
         let currentImageIndex = 0;
@@ -199,11 +225,17 @@
                 modalImage.alt = images[currentImageIndex].alt;
                 currentNumber.textContent = currentImageIndex + 1;
 
-                // Add or remove class for scaling based on index
+                // Remove all scaling classes first
+                modalImage.classList.remove('scaled-down', 'app-scaled');
+
+                // Add scaling class for images index 4 and above (app images)
                 if (currentImageIndex >= 4) {
                     modalImage.classList.add('scaled-down');
-                } else {
-                    modalImage.classList.remove('scaled-down');
+                    
+                    // Additional scaling for app1-app10 images (indices 4-13)
+                    if (currentImageIndex >= 4 && currentImageIndex <= 13) {
+                        modalImage.classList.add('app-scaled');
+                    }
                 }
             }
         }
