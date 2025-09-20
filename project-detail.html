@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Customer Feedback and Info Management System for Vimandin Spa - My Portfolio</title>
+    <title>Customer Feedback and Info Management System for Vimandin Spa - Napasorn.su</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="project-detail.css">
 </head>
 <body>
     <header class="header container">
-        <a href="index.html" class="logo">My Portfolio</a>
+        <a href="index.html" class="logo">Napasorn.su</a>
         <nav class="nav-links">
             <a href="index.html">About</a>
             <a href="project.html">Project</a>
@@ -81,7 +81,7 @@
                         <div class="step">
                             <h3>2. Design System</h3>
                             <div class="gallery-item" onclick="openModal(1)">
-                                <img src="img/DesignSystem2.png" alt="Design System">
+                                <img src="img/component1.jpg" alt="Design System">
                             </div>
                         </div>
                         <div class="step">
@@ -110,15 +110,34 @@
                     <h2>Design Gallery</h2>
                     <div class="gallery-grid">
                         <div class="gallery-item" onclick="openModal(2)">
-                            <img src="img/pj_spa.png" alt="Spa Website Screens">
+                            <img src="img/spa1.jpg" alt="spa1">
                         </div>
-                        
                         <div class="gallery-item" onclick="openModal(3)">
-                            <img src="img/pj_spa2.png" alt="User Interface">
+                            <img src="img/spa2.jpg" alt="spa2">
                         </div>
-                        
                         <div class="gallery-item" onclick="openModal(4)">
-                            <img src="img/pj_spa.png" alt="Customer Feedback System">
+                            <img src="img/spa3.jpg" alt="spa3">
+                        </div>
+                        <div class="gallery-item" onclick="openModal(5)">
+                            <img src="img/spa4.jpg" alt="spa4">
+                        </div>
+                        <div class="gallery-item" onclick="openModal(6)">
+                            <img src="img/spa5.jpg" alt="spa5">
+                        </div>
+                        <div class="gallery-item" onclick="openModal(7)">
+                            <img src="img/spa6.jpg" alt="spa6">
+                        </div>
+                        <div class="gallery-item" onclick="openModal(8)">
+                            <img src="img/spa7.jpg" alt="spa7">
+                        </div>
+                        <div class="gallery-item" onclick="openModal(9)">
+                            <img src="img/spa8.jpg" alt="spa8">
+                        </div>
+                        <div class="gallery-item" onclick="openModal(10)">
+                            <img src="img/spa9.jpg" alt="spa9">
+                        </div>
+                        <div class="gallery-item" onclick="openModal(11)">
+                            <img src="img/spa10.jpg" alt="spa10">
                         </div>
                     </div>
                 </section>
@@ -133,7 +152,7 @@
             <nav class="project-navigation">
                 <a href="project-detail-4.html" class="nav-prev">
                     <span>Previous Project</span>
-                    <strong>Dashboard UI</strong>
+                    <strong>Phone Number Checking Application</strong>
                 </a>
                 <a href="project-detail-2.html" class="nav-next">
                     <span>Next Project</span>
@@ -171,13 +190,52 @@
     <script>
         const images = [
             { src: 'img/painpoint1.png', alt: 'Pain point & solution' },
-            { src: 'img/DesignSystem2.png', alt: 'Design System' },
-            { src: 'img/pj_spa.png', alt: 'Spa Website Screens' },
-            { src: 'img/pj_spa2.png', alt: 'User Interface' },
-            { src: 'img/pj_spa.png', alt: 'Customer Feedback System' }
+            { src: 'img/component1.jpg', alt: 'component1' },
+            { src: 'img/spa1.jpg', alt: 'spa1' },
+            { src: 'img/spa2.jpg', alt: 'spa2' },
+            { src: 'img/spa3.jpg', alt: 'spa3' },
+            { src: 'img/spa4.jpg', alt: 'spa4' },
+            { src: 'img/spa5.jpg', alt: 'spa5' },
+            { src: 'img/spa6.jpg', alt: 'spa6' },
+            { src: 'img/spa7.jpg', alt: 'spa7' },
+            { src: 'img/spa8.jpg', alt: 'spa8' },
+            { src: 'img/spa9.jpg', alt: 'spa9' },
+            { src: 'img/spa10.jpg', alt: 'spa10' },
         ];
         
         let currentImageIndex = 0;
+        
+        function applySpaImageScaling(modalImage, imageIndex) {
+            // Remove all scaling classes first
+            modalImage.classList.remove('scaled-down', 'fn1-scaled', 'app-scaled', 
+                                      'spa-scale-30', 'spa-scale-50', 'spa-scale-170', 'spa-scale-40');
+            
+            // Apply scaling for spa images (indices 2-11 correspond to spa1-spa10)
+            if (imageIndex >= 2 && imageIndex <= 11) {
+                const spaImageNumber = imageIndex - 1; // spa1=2-1=1, spa2=3-1=2, etc.
+                
+                switch(spaImageNumber) {
+                    case 1: // spa1 - ลด70%
+                        modalImage.classList.add('spa-scale-30');
+                        break;
+                    case 2: // spa2 - ลด50%
+                    case 3: // spa3 - ลด50%
+                    case 5: // spa5 - ลด50%
+                    case 7: // spa7 - ลด50%
+                    case 10: // spa10 - ลด50%
+                        modalImage.classList.add('spa-scale-50');
+                        break;
+                    case 4: // spa4 - เพิ่ม70%
+                    case 6: // spa6 - เพิ่ม70%
+                    case 8: // spa8 - เพิ่ม70%
+                        modalImage.classList.add('spa-scale-170');
+                        break;
+                    case 9: // spa9 - ลด60%
+                        modalImage.classList.add('spa-scale-40');
+                        break;
+                }
+            }
+        }
         
         function openModal(imageIndex) {
             currentImageIndex = imageIndex;
@@ -189,6 +247,7 @@
             if (modalImage && images[currentImageIndex]) {
                 modalImage.src = images[currentImageIndex].src;
                 modalImage.alt = images[currentImageIndex].alt;
+                applySpaImageScaling(modalImage, currentImageIndex);
                 currentNumber.textContent = currentImageIndex + 1;
                 totalNumber.textContent = images.length;
                 modal.classList.add('active');
@@ -221,6 +280,7 @@
             if (modalImage && images[currentImageIndex]) {
                 modalImage.src = images[currentImageIndex].src;
                 modalImage.alt = images[currentImageIndex].alt;
+                applySpaImageScaling(modalImage, currentImageIndex);
                 currentNumber.textContent = currentImageIndex + 1;
             }
         }

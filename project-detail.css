@@ -326,6 +326,23 @@
     transform: scale(0.35); /* 0.45 * 0.7 = 0.315 (30% smaller than scaled-down) */
 }
 
+/* Spa image custom scaling */
+#modalImage.spa-scale-30 {
+    transform: scale(0.33); /* Reduce 70% (show 30%) */
+}
+
+#modalImage.spa-scale-50 {
+    transform: scale(0.75); /* Reduce 50% (show 50%) */
+}
+
+#modalImage.spa-scale-170 {
+    transform: scale(1.5); /* Increase 70% (show 170%) */
+}
+
+#modalImage.spa-scale-40 {
+    transform: scale(0.53); /* Reduce 60% (show 40%) */
+}
+
 .modal-close {
     position: fixed;
     top: 20px;
