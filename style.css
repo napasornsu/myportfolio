@@ -61,6 +61,7 @@ body.fade-out {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 2rem;
+    padding-bottom: 120px; /* Ensure space for floating button */
     box-sizing: border-box;
 }
 
@@ -201,6 +202,29 @@ body.fade-out {
     overflow: visible;
 }
 
+.skills-categories-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 4rem;
+    row-gap: 2rem;
+    width: 100%;
+}
+
+.skill-category {
+    margin-bottom: 0;
+}
+
+.skill-category-title {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-top: 0;
+    margin-bottom: 1rem;
+    color: var(--secondary-color);
+    display: block;
+    border-left: 4px solid var(--primary-color);
+    padding-left: 10px;
+}
+
 .skill-item {
     display: flex;
     flex-direction: column;
@@ -280,6 +304,20 @@ body.fade-out {
 .btn:hover {
     background-color: var(--secondary-color);
     box-shadow: 0 6px 20px rgba(86, 54, 176, 0.4);
+}
+
+.floating-resume-btn {
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+    animation: fadeInAnimation 1s ease 0.5s forwards;
+    opacity: 0; /* Star hidden, animate in */
+}
+
+.floating-resume-btn:hover {
+    transform: translateX(-50%) translateY(-5px);
 }
 
 .social-bar {
@@ -442,6 +480,7 @@ body.fade-out {
         width: 100%;
         max-width: 100vw;
         padding: 0 2rem;
+        padding-bottom: 120px; /* Ensure space for floating button */
         padding-left: max(2rem, env(safe-area-inset-left));
         padding-right: max(2rem, env(safe-area-inset-right));
         margin: 0;
@@ -513,6 +552,11 @@ body.fade-out {
         width: 100%;
         padding: 1.5rem 0;
         overflow: visible;
+    }
+
+    .skills-categories-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
     }
 
     .skills-grid {
@@ -592,6 +636,7 @@ body.fade-out {
 @media (max-width: 480px) {
     .container {
         padding: 1rem;
+        padding-bottom: 120px; /* Ensure space for floating button */
         padding-left: max(1rem, env(safe-area-inset-left));
         padding-right: max(1rem, env(safe-area-inset-right));
         width: 100%;
@@ -620,6 +665,13 @@ body.fade-out {
     
     .detail-column p {
         font-size: 0.85rem;
+    }
+
+    .floating-resume-btn {
+        bottom: 20px;
+        left: 50%;
+        padding: 0.8rem 1.5rem;
+        font-size: 0.9rem;
     }
     
     .intro-text p {
